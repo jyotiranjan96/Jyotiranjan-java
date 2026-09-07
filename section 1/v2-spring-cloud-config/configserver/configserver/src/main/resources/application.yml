@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: "configserver"
+  profiles:
+    active: native # <-- Crucial: Tells the server to run locally and avoid looking for Git
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: "classpath:/config"
+
+server:
+  port: 8071
