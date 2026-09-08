@@ -15,7 +15,7 @@ spring:
           clone-on-start: true
           force-pull: true
           search-paths:
-            - section 1/v2-spring-cloud-config/configserver/configserver/src/main/resources/config
+            - "section 1/v2-spring-cloud-config/configserver/src/main/resources/config" # <-- REMOVED DUPLICATED SUBFOLDER
 
 server:
   port: 8071
