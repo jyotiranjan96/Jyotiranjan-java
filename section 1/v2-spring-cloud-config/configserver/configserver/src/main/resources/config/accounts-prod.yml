@@ -5,7 +5,7 @@ accounts:
   message: "Welcome to EazyBank accounts related Production APIs"
   contactDetails:
     name: "Giri jyoti- Product Owner"
-    email: "giri@gmail.com"
+    email: "{cipher}965797b0ebc8847b319ce004a2e0f94e3f78c5a3c0b6283ba8896f599f6b03cf"
   onCallSupport:
     - (453) 392-4829
     - (236) 203-0384
