@@ -1,5 +1,5 @@
 build:
-  version: "1.0"
+  version: "3.5" # <--- CHANGED THIS FROM "1.0" TO "3.5"
 
 accounts:
   message: "Welcome to EazyBank accounts related Production APIs"
