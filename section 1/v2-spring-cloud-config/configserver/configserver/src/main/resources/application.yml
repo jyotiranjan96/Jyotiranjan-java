@@ -1,10 +1,8 @@
 spring:
   application:
     name: configserver
-
   profiles:
     active: git
-
   cloud:
     config:
       server:
@@ -15,7 +13,8 @@ spring:
           clone-on-start: true
           force-pull: true
           search-paths:
-            - "section 1/v2-spring-cloud-config/configserver/src/main/resources/config" # <-- REMOVED DUPLICATED SUBFOLDER
+            # Crucial: Ensure this matches the double 'configserver/configserver' layout we found
+            - "section 1/v2-spring-cloud-config/configserver/configserver/src/main/resources/config"
 
 server:
   port: 8071

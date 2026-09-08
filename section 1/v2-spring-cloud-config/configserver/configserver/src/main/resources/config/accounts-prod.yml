@@ -1,4 +1,4 @@
-build.version: "4.5" # <--- Update this to a flat string layout and increase the version to test
+build.version: "5.0" # <--- Update this to a flat string layout and increase the version to test
 
 accounts:
   message: "Welcome to EazyBank accounts related Production APIs"
