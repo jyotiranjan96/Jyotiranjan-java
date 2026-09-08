@@ -24,3 +24,7 @@ management:
     web:
       exposure:
         include: "*"
+  # ADD THIS BLOCK BELOW TO EXPLICITLY ENABLE REFRESHING PROPERTIES
+  endpoint:
+    refresh:
+      enabled: true

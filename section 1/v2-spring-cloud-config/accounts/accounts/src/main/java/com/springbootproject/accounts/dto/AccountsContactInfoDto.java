@@ -1,13 +1,15 @@
-package com.springbootproject.accounts.dto; // Adjusted based on the file path visible at the bottom of your IDE
-
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
-import lombok.Getter;
-import lombok.Setter;
+package com.springbootproject.accounts.dto;
 
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Component
 @ConfigurationProperties(prefix = "accounts")
 @Getter
 @Setter
@@ -17,4 +19,27 @@ public class AccountsContactInfoDto {
     private Map<String, String> contactDetails;
     private List<String> onCallSupport;
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Map<String, String> getContactDetails() {
+        return contactDetails;
+    }
+
+    public void setContactDetails(Map<String, String> contactDetails) {
+        this.contactDetails = contactDetails;
+    }
+
+    public List<String> getOnCallSupport() {
+        return onCallSupport;
+    }
+
+    public void setOnCallSupport(List<String> onCallSupport) {
+        this.onCallSupport = onCallSupport;
+    }
 }

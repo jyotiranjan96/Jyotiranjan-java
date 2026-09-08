@@ -23,11 +23,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+// 1. ADDED IMPORT FOR REFRESH SCOPE HERE
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+
 /**
  * REST Controller for managing Account operations.
  * Implements CRUD functionality using IAccountsService.
  */
 @RestController
+@RefreshScope // 2. ADDED ANNOTATION HERE TO REFRESH CONFIG PROPERTIES AT RUNTIME
 @RequestMapping("/api")
 @Validated
 @Tag(name = "CRUD REST APIs for Accounts in EazyBank", description = "CRUD REST APIs for accounts")
@@ -141,8 +145,13 @@ public class AccountsController {
     
     @GetMapping("/contact-info")
     public ResponseEntity<AccountsContactInfoDto> getcontactInfo() {
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(accountsContactInfoDto);
+
+        System.out.println("==================================");
+        System.out.println("Message : " + accountsContactInfoDto.getMessage());
+        System.out.println("Contact Details : " + accountsContactInfoDto.getContactDetails());
+        System.out.println("On Call Support : " + accountsContactInfoDto.getOnCallSupport());
+        System.out.println("==================================");
+
+        return ResponseEntity.ok(accountsContactInfoDto);
     }
 }

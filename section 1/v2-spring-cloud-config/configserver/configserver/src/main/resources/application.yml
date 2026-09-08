@@ -1,21 +1,24 @@
 spring:
   application:
-    name: "configserver"
+    name: configserver
+
   profiles:
-    # active: native
     active: git
+
   cloud:
     config:
       server:
-        # native:
-        #   search-locations: "classpath:/config"
-        #   search-locations: "file:///Users/eazybytes/Documents/config"
         git:
-          uri: "https://github.com/jyotiranjan96/Jyotiranjan-java.git"
+          uri: https://github.com/jyotiranjan96/Jyotiranjan-java.git
           default-label: main
           timeout: 5
           clone-on-start: true
           force-pull: true
+          search-paths:
+            - section 1/v2-spring-cloud-config/configserver/configserver/src/main/resources/config
 
 server:
   port: 8071
+
+encrypt:
+  key: "45D81EC1EF61DF9AD8D3E5BB397F9"
