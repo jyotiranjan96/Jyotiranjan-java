@@ -1,7 +1,7 @@
 build.version: "5.0" # <--- Update this to a flat string layout and increase the version to test
 
 accounts:
-  message: "Welcome to EazyBank accounts related Prod APIs"
+  message: "Welcome to EazyBank accounts related webhook APIs"
   contactDetails:
     name: "Giri jyoti- Product Owner"
     email: "{cipher}965797b0ebc8847b319ce004a2e0f94e3f78c5a3c0b6283ba8896f599f6b03cf"
