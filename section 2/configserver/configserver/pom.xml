@@ -2,7 +2,7 @@
 <project xmlns="http://apache.org"
          xmlns:xsi="http://w3.org"
          xsi:schemaLocation="http://apache.org
-         https://apache.org">
+                             https://apache.org">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -26,7 +26,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -36,19 +35,8 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
-        
-        <dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-bus-amqp</artifactId>
-     </dependency>
      
-     <dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-config-monitor</artifactId>
-    </dependency>
-
-
-        <!-- Added to provide the Tomcat server environment so the application stays running -->
+        <!-- Provides the Tomcat server environment so the application stays running -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -59,7 +47,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <dependencyManagement>
@@ -76,9 +63,29 @@
 
     <build>
         <plugins>
+            <!-- Spring Boot Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!-- Added Jib Plugin to build the Config Server Docker image -->
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.5</version>
+                <configuration>
+                    <from>
+                        <image>eclipse-temurin:17-jre</image>
+                    </from>
+                    <to>
+                        <image>configserver:s2</image>
+                    </to>
+                    <container>
+                        <!-- Explicit main class path prevents Jib from hanging at 80% on Windows -->
+                        <mainClass>com.banking.configserver.ConfigserverApplication</mainClass>
+                    </container>
+                </configuration>
             </plugin>
         </plugins>
     </build>

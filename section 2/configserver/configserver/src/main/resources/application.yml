@@ -17,12 +17,6 @@ spring:
           search-paths:
             - "section 1/v2-spring-cloud-config/configserver/configserver/src/main/resources/config"
 
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-
 management:
   endpoints:
     web:
