@@ -1,6 +1,6 @@
 spring:
   application:
-    name: "finverse-eureka-server"
+    name: "finverse-bank"
 
   config:
     import: "optional:configserver:http://localhost:8071/"
@@ -21,3 +21,9 @@ management:
     health:
       probes:
         enabled: true
+
+# 🚀 ADD THIS TO DISABLE EUREKA CLIENT TEMPORARILY:
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false

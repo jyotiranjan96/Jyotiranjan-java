@@ -14,8 +14,9 @@ spring:
           timeout: 5
           clone-on-start: true
           force-pull: true
+          # 📂 Update this to match your current section's config folder path on GitHub:
           search-paths:
-            - "section 1/v2-spring-cloud-config/configserver/configserver/src/main/resources/config"
+            - "section 3/v2-spring-cloud-config/configserver/configserver/src/main/resources/config"
 
 management:
   endpoints:
