@@ -22,7 +22,6 @@ management:
       probes:
         enabled: true
 
-# 🚀 ADD THIS TO DISABLE EUREKA CLIENT TEMPORARILY:
 eureka:
   client:
     register-with-eureka: false
