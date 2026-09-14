@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: "accounts" # <--- ADD THIS LINE HERE
-  cloud:
-    config:
-      uri: http://localhost:8071
