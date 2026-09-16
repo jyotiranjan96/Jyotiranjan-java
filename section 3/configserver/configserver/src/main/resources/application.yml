@@ -14,7 +14,8 @@ spring:
           timeout: 5
           clone-on-start: true
           force-pull: true
-          
+          search-paths:
+            - section 3/configserver/configserver/src/main/resources/config
 
 management:
   endpoints:
