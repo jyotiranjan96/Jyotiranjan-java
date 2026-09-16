@@ -7,9 +7,9 @@ spring:
 
   datasource:
     url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
+    driver-class-name: org.h2.Driver
     username: sa
-    password: ''
+    password: ""
 
   h2:
     console:
@@ -31,5 +31,27 @@ management:
         include: "*"
 
   endpoint:
+    shutdown:
+      enabled: true
     refresh:
       enabled: true
+
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: accounts
+    description: Fineverse Bank Application
+    version: 1.0.0
+
+eureka:
+  instance:
+    prefer-ip-address: true
+
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8070/eureka/

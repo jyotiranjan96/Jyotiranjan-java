@@ -14,9 +14,7 @@ spring:
           timeout: 5
           clone-on-start: true
           force-pull: true
-          search-paths:
-            - "section 3/*"
-            - "section 3/v2-spring-cloud-config/configserver/configserver/src/main/resources/config"
+          
 
 management:
   endpoints:
