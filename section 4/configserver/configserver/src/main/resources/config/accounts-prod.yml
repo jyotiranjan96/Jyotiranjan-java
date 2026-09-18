@@ -1,4 +1,4 @@
-build.version: "5.0" # <--- Update this to a flat string layout and increase the version to test
+build.version: "5.0"
 
 accounts:
   message: "Welcome to EazyBank accounts related prod APIs"
@@ -8,3 +8,13 @@ accounts:
   onCallSupport:
     - (453) 392-4829
     - (236) 203-0384
+
+# 🛠️ ADD THIS BLOCK TO FILE BOTTOM TO ROUTE CONNECTIVITY TO PORT 8070
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: "http://localhost:8070/eureka/"
